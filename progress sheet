@@ -1,0 +1,104 @@
+Done so far:
+	
+	Verified all hardware on the breadboard and initialized the following:
+	
+	ESP 32 
+		- communication between ESP32 - Cloud (console fetch on cloud using mqtt)
+
+	ESP-EYE
+		- ESP-WHO example for cat detection using xtensa libraries executed / displayed on web using wifi modules
+		
+	Cloud setup 
+		- S3
+
+
+Pending (Known)
+	Cloud setup
+		- Deployment (Lambda, EC2)
+
+	Fish Detection Classifier (Haar classifer, YOLO-preferred)
+		- Dataset (Niall,Yue - by 21st Feb, priority 1)
+			- positive + bounding boxes
+			- negative 
+		- ESPEYE cpp/py executable code (Niall,Yue - by 21st Feb, priority 2)
+		- Classifier model code in py
+		- integrating above and running on ESPEYE
+		{ 
+			Fish Position Classifier
+				- Dataset
+					- positive + bounding boxes
+					- negative 
+				- ESPEYE cpp/py executable code
+				- Classifier model code in py
+				- integrating above and running on ESPEYE
+		}
+
+	ESP-EYE to Cloud connection (Pallavit,Juan - by 21st Feb, pr1)
+
+	Cloud to ESP 32 connection (Pallavit,Juan - by 21st Feb, pr1)
+
+	ESP32 to Acutator connection ()
+
+
+Open Discussion Items (Unknowns):
+
+	Actuator 
+		- currently monitoring water level in aquarium
+		- motor?
+		- 3d printed arm?
+
+	Confirmation from Prof for esp-eye and esp32 connection  (Yue)
+		- currently esp-eye to cloud, then cloud to esp-32 , but do we need wires/soldering to connect espeye and 32?
+
+
+	Scheduled based water level data sent to cloud
+		- 
+	
+	Decision making system on cloud 
+		- 
+		
+	Cloud Deployment environment (EC2/Lambda) (Shritesh)
+
+	Cloud to Game overlay (Shritesh)
+		- UI
+
+
+
+
+
+Feb 14th to Feb 21
+
+Fish classification models (Yue, Niall)
+ESPEYE and ESP 32 setup with cloud (Pallavit and Juan)
+Cloud setup (Yue, Juan, Pallavit, Niall, Shritesh)
+Game development and Cloud connection  (Shritesh)
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+This to talk about tmrw - 29th March
+	- Encrypted images coming from the camera
+
+
+
+
+
+juan - Encryption / decryption of photos 
+yue - if statement for motor water level
+pal - check OTA
+niall - sleep mode in camera and esp32
+
+
+
+
+
+
+
+
+
+
+
+
+

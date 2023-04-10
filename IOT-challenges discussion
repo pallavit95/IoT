@@ -1,0 +1,58 @@
+IOT
+
+Updates: Pal
+	1. hardware
+		- Keep in central cloud repo and ask customer to download updates and flash it on the componenet
+			- Check if componenets can be updated with new code wirelessly as well
+		- 3d prinitng was used, how do we handle and scale those componenets?
+	2. software	
+		- cloud software updates
+		
+		
+
+Scale: Yue
+	1. Hardware
+		- Adding a tempature sensor sticker 
+		- Production of hardware devices in large numbers
+		- Different aquarium sizes
+
+	2. Software
+		- Distribution of workload
+			- Lambda (1000 concurrent reqs at a time / free tier)
+				- auto-scale
+			- S3 bucket 
+				- partitions (3000-6000 actions per partition which is inside one bucket)
+		- Geo-replication and server distribution
+			- serving requests using servers that are closer to the user's location for low latency (AWS)
+		- Different fish species but our model is trained on one fish currently
+
+
+
+Security: Juan
+	1. hardware
+		- turn off motor in case of no wifi connection to get update from cloud as fail-safe mechanism
+
+	2. software
+		- implement encryption for photos
+		- implement a forced change of password on first time setup
+		- implement an auth protocol to authorize user in esp32
+		- pass wifi details dynamically at first time setup
+		- implement fail-safe on buttons geeting pressed and misbhevaiour (fish does credit card purchase)
+		- use secure boot to check if running authorized software
+		- all software patches are up to date
+
+Power: Niall
+	1. hardware
+		- turning off the camera vs leaving it on
+		- minimize esp32 board (sleep mode?), until it's triggered 
+		- If water image level per time taken mismatch then turn off water pump 
+		- check battery voltage by putting capacitor between power source and components like esp32 board / cam / motor
+			to check if some threshold power value is met. Else power on an ideicator led
+		- Turn off the motor after use 
+		-
+
+	2. software
+		- check if fish is moving or same button is getting pressed X no of times to optimize no of pictures being sent to cloud (by updating from 5 sec to 30 sec for eg) / camera drawing power
+
+
+

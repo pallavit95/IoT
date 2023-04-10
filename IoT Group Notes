@@ -1,0 +1,98 @@
+IoT Group Notes
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+DEMO:
+
+* Camera takes a picture (Done)
+sends it to aws-iot as char stream to message queue / jpeg to s3 (Done)
+
+Lambda function to subscribe to message queue / poll images from s3 (Pending)
+
+this image gets processed by two lambda functions 
+	1) finds fish position in fish tank using the image
+		- Get dataset and put labels (Done)
+		- create a model using YOLO (PenDoning)
+		- trained model is loaded in lambda function (Pendone)
+		- Pass image into model and get output as keystrokes (for demo)
+		- sends message to kafka goes to Kafka
+	2) checks water level using the image
+		- Gets images from above
+		- Detect the water level using python code deployed on lambda function
+
+		* - sends message to esp32 board
+			- esp32 connected to aws (Done)
+			- esp32 recieves a message (Done)
+			- esp32 on breadboard powered on, triggers the bulb on/off based on input above (Done)
+
+Kafka is deployed in a docker on Digital Ocean (Done)
+Python script in localhost to subscribe to Kafka and get keystroke messages processed from above lamda function outputs
+	- script will play game deployed on Chrome
+
+
+
+* hardware
+
+
+{	
+	This is for main project as this can be more useful and precise
+		- Pass image into model and get output of cordinates
+		- Map output onto a grid
+			- 
+		- translates position to keystrokes
+}
+
+---------------------------------------------------------------------------------------------------------------------
+
+Niall
+	- Dataset + Labelling
+	- Fish modelling - YOLO code exploration (python)
+
+Yue 
+	- Dataset (Pre-requesite on Niall)
+	- Actuator Modelling - Image Recognition - how to monitor water level from a picture of the fish tank
+
+Pallavit
+	- Setting up cam connection to AWS IoT Core
+	- Testing cam connection with AWS IoT - S3/MessageQ
+
+Juan
+	- Setting up ESP32 connection to AWS IoT Core (done)
+	- Testing AWS to ESP32 (done)
+	- Hardware - Connect acutator with ESP32
+					- Software
+					- Hardware
+
+Shritesh
+	- Establish Connection with AWS in python to get decision data
+	- Keystroke mapping to a chrom deployed game
+
+
+Pending - ESP-Heavy? or Cloud-heavy?
+Monday - 6pm
+
+---------------------------------------------------------------------------------------------------------------------
+
+Steps to setup esp-who
+
+cd ~/
+
+git clone https://github.com/opencv/opencv.git
+
+cd opencv
+
+mkdir install
+
+cd install
+
+cmake ../ -D BUILD_ZLIB=OFF
+
+make
+
+sudo make install
+
+
+
+
